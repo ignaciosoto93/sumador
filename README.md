@@ -4,7 +4,7 @@ To run the application using Docker, follow these steps:
 
 Clone the repository:
 ```
-git clone https://github.com/your-username/sumador-api.git
+git clone git@github.com:ignaciosoto93/sumador.git
 ```
 Build the Docker image:
 ```
