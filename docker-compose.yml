@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    container_name: my-api
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123456
+      PERCENTAGE_SERVICE_URL: http://percentage-service:8080
+    networks:
+      - tano-network
+
+  db:
+    image: postgres:13
+    container_name: my-db
+    environment:
+      POSTGRES_DB: my_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    volumes:
+      - my-db-data:/var/lib/postgresql/data
+    networks:
+      - tano-network
+
+
+networks:
+  tano-network:
+
+volumes:
+  my-db-data:

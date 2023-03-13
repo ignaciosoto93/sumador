@@ -1,0 +1,6 @@
+resilience4j:
+  ratelimiter:
+    configs:
+      default:
+        limitForPeriod: 3 # the maximum number of requests allowed in a duration
+        limitRefreshPeriod: 1m # the duration in minutes for the limit to refresh
