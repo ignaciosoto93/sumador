@@ -21,4 +21,10 @@ docker exec -it my-db psql -U postgres -c "CREATE TABLE history (id SERIAL PRIMA
 ```
 Once the container is up and running, you can access the API at http://localhost:8080/sum.
 
+Examples:
+```
+curl -X POST "http://localhost:8080/api/add-numbers?num1=5&num2=5"
+curl -X GET  "http://localhost:8080/api/history?page=1&size=10"
+```
+
 That's it! You can now use the Sumador API and keep track of your call history.
